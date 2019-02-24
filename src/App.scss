@@ -6,4 +6,68 @@
   box-sizing: border-box;
   overflow: hidden;
   background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+
+  .card-image {
+
+    width: 50px;
+    height: 75px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    &.SA { background: url("assets/card-images/AS"); background-size: cover;}
+    &.HA { background: url("assets/card-images/AH"); background-size: cover;}
+    &.CA { background: url("assets/card-images/AC"); background-size: cover;}
+    &.DA { background: url("assets/card-images/AD"); background-size: cover;}
+    &.SK { background: url("assets/card-images/KS"); background-size: cover;}
+    &.HK { background: url("assets/card-images/KH"); background-size: cover;}
+    &.CK { background: url("assets/card-images/KC"); background-size: cover;}
+    &.DK { background: url("assets/card-images/KD"); background-size: cover;}
+    &.SQ { background: url("assets/card-images/QS"); background-size: cover;}
+    &.HQ { background: url("assets/card-images/QH"); background-size: cover;}
+    &.CQ { background: url("assets/card-images/QC"); background-size: cover;}
+    &.DQ { background: url("assets/card-images/QD"); background-size: cover;}
+    &.SJ { background: url("assets/card-images/JS"); background-size: cover;}
+    &.HJ { background: url("assets/card-images/JH"); background-size: cover;}
+    &.CJ { background: url("assets/card-images/JC"); background-size: cover;}
+    &.DJ { background: url("assets/card-images/JD"); background-size: cover;}
+    &.ST { background: url("assets/card-images/TS"); background-size: cover;}
+    &.HT { background: url("assets/card-images/TH"); background-size: cover;}
+    &.CT { background: url("assets/card-images/TC"); background-size: cover;}
+    &.DT { background: url("assets/card-images/TD"); background-size: cover;}
+    &.S9 { background: url("assets/card-images/9S"); background-size: cover;}
+    &.H9 { background: url("assets/card-images/9H"); background-size: cover;}
+    &.C9 { background: url("assets/card-images/9C"); background-size: cover;}
+    &.D9 { background: url("assets/card-images/9D"); background-size: cover;}
+    &.S8 { background: url("assets/card-images/8S"); background-size: cover;}
+    &.H8 { background: url("assets/card-images/8H"); background-size: cover;}
+    &.C8 { background: url("assets/card-images/8C"); background-size: cover;}
+    &.D8 { background: url("assets/card-images/8D"); background-size: cover;}
+    &.S7 { background: url("assets/card-images/7S"); background-size: cover;}
+    &.H7 { background: url("assets/card-images/7H"); background-size: cover;}
+    &.C7 { background: url("assets/card-images/7C"); background-size: cover;}
+    &.D7 { background: url("assets/card-images/7D"); background-size: cover;}
+    &.S6 { background: url("assets/card-images/6S"); background-size: cover;}
+    &.H6 { background: url("assets/card-images/6H"); background-size: cover;}
+    &.C6 { background: url("assets/card-images/6C"); background-size: cover;}
+    &.D6 { background: url("assets/card-images/6D"); background-size: cover;}
+    &.S5 { background: url("assets/card-images/5S"); background-size: cover;}
+    &.H5 { background: url("assets/card-images/5H"); background-size: cover;}
+    &.C5 { background: url("assets/card-images/5C"); background-size: cover;}
+    &.D5 { background: url("assets/card-images/5D"); background-size: cover;}
+    &.S4 { background: url("assets/card-images/4S"); background-size: cover;}
+    &.H4 { background: url("assets/card-images/4H"); background-size: cover;}
+    &.C4 { background: url("assets/card-images/4C"); background-size: cover;}
+    &.D4 { background: url("assets/card-images/4D"); background-size: cover;}
+    &.S3 { background: url("assets/card-images/3S"); background-size: cover;}
+    &.H3 { background: url("assets/card-images/3H"); background-size: cover;}
+    &.C3 { background: url("assets/card-images/3C"); background-size: cover;}
+    &.D3 { background: url("assets/card-images/3D"); background-size: cover;}
+    &.S2 { background: url("assets/card-images/2S"); background-size: cover;}
+    &.H2 { background: url("assets/card-images/2H"); background-size: cover;}
+    &.C2 { background: url("assets/card-images/2C"); background-size: cover;}
+    &.D2 { background: url("assets/card-images/2D"); background-size: cover;}
+  }
 }
