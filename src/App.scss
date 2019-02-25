@@ -10,7 +10,6 @@
   flex-wrap: wrap;
 
   .card-image {
-
     width: 50px;
     height: 75px;
     box-sizing: border-box;
@@ -69,5 +68,10 @@
     &.H2 { background: url("assets/card-images/2H"); background-size: cover;}
     &.C2 { background: url("assets/card-images/2C"); background-size: cover;}
     &.D2 { background: url("assets/card-images/2D"); background-size: cover;}
+    &.generic-back-1 {background: url("assets/deck-images/deck-back-1.jpg"); background-size: cover;}
+    &.generic-back-2 {background: url("assets/deck-images/deck-back-2.jpg"); background-size: cover;}
+    &.generic-back-3 {background: url("assets/deck-images/deck-back-3.jpg"); background-size: cover;}
+    &.generic-back-4 {background: url("assets/deck-images/deck-back-4.jpg"); background-size: cover;}
+    &.generic-back-5 {background: url("assets/deck-images/deck-back-5.jpg"); background-size: cover;}
   }
 }
