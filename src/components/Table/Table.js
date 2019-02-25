@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import gameStages from './../../utilities/gameStages.enum';
+import TableScenario from './../../assets/mock-table-scenarios/EmptyTableScenario.js';
 import './Table.scss';
 
 class Table extends Component {
@@ -23,36 +24,9 @@ class Table extends Component {
 
   componentDidMount() {
     //This is where the API call is going to happen
-    const newTable = {
-      activeSeatIndex: null,
-      stage: gameStages.PLACE_YOUR_BETS,
-      shoe: {},
-      dealer: {},
-      seats: [
-        {
-          seatNumber: 0,
-        },
-        {
-          seatNumber: 1,
-        },
-        {
-          seatNumber: 2,
-        },
-        {
-          seatNumber: 3,
-        },
-        {
-          seatNumber: 4,
-        },
-        {
-          seatNumber: 5,
-        },
-        {
-          seatNumber: 6,
-        },
-      ]
-    }
-    this.updateTable(newTable);
+    const newTable = TableScenario;
+    const { activeSeatIndex, seats, shoe, dealer } = newTable;
+    this.updateTable({ ...this.state.table, activeSeatIndex, seats, shoe, dealer });
   }
 
   updateActiveSeatIndex(seatIndex) {
