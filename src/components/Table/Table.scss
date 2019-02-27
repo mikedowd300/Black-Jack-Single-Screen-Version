@@ -17,14 +17,5 @@
     height: 60%;
     display: flex;
     flex-wrap: nowrap;
-
-    .seat-wrapper {
-      width: 100%;
-      border: 1px solid grey;
-
-      &:hover, .active-seat {
-        width: 300%;
-      }
-    }
   }
 }
