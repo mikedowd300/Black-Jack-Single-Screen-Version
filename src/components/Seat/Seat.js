@@ -32,7 +32,6 @@ const Seat = props =>  {
   return (
     <div className={`seat ${isActive ? 'active' : ''}`} onClick={updateIsActive}>
       <div className="player-wrapper">
-        hello
       </div>
     </div>
   );
