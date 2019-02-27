@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import gameStages from './../../utilities/gameStages.enum';
+import Seat from './../Seat/Seat';
 import TableScenario from './../../assets/mock-table-scenarios/EmptyTableScenario.js';
 import './Table.scss';
 
@@ -12,25 +13,26 @@ class Table extends Component {
         seats: [],
         shoe: {},
         dealer: {},
+        stage: '',
       },
     };
 
     this.updateActiveSeatIndex = this.updateActiveSeatIndex.bind(this);
     this.updateStage = this.updateStage.bind(this);
     this.updateDealer = this.updateDealer.bind(this);
-    this.updateTable = this.updateTable.bind(this);
+    this.updateSeats = this.updateSeats.bind(this);
     this.updateTable = this.updateTable.bind(this);
   }
 
   componentDidMount() {
-    //This is where the API call is going to happen
+    //This is where the API call is going to happen - NOPE - ITS GONNA BE IN THE PARENT
     const newTable = TableScenario;
     const { activeSeatIndex, seats, shoe, dealer } = newTable;
     this.updateTable({ ...this.state.table, activeSeatIndex, seats, shoe, dealer });
   }
 
-  updateActiveSeatIndex(seatIndex) {
-    this.updateTable({ ...this.state.table, seatIndex })
+  updateActiveSeatIndex(activeSeatIndex) {
+    this.updateTable({ ...this.state.table, activeSeatIndex })
   }
 
   updateStage(stage) {
@@ -44,7 +46,7 @@ class Table extends Component {
   updateSeats(seat) {
     const newSeats = Object.assign([], this.state.table.seats);
     newSeats[seat.seatNumber] = seat;
-    this.updateSeats({ ...this.state.table, newSeats })
+    this.updateTable({ ...this.state.table, seats: newSeats })
   }
 
   updateTable(table) {
@@ -52,12 +54,20 @@ class Table extends Component {
   }
 
   render() {
-    console.log(this.state.table);
+    const actions = {
+      updateActiveSeatIndex: this.updateActiveSeatIndex,
+      updateStage: this.updateStage,
+      updateSeats: this.updateSeats,
+    }
 
     const { seats, activeSeatIndex, dealer } = this.state.table;
 
-    //When Seat is created replace the divs with the seat component
-    const seatElems = seats.map((seat, i) => <div key={`seat-${i}`} className="seat-wrapper"></div>);
+    const seatElems = seats.map((seat, i) => <Seat
+        key={`seat-${i}`}
+        seat={seat}
+        updateSeats={this.updateSeats}
+        actions={actions}
+      />);
 
     return (
       <div className="table">

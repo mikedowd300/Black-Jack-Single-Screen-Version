@@ -20,6 +20,7 @@ module.exports = {
       isTaken: false,
       isInHand: false,
       seatNumber: 0,
+      activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
@@ -49,6 +50,7 @@ module.exports = {
       isTaken: false,
       isInHand: false,
       seatNumber: 1,
+      activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
@@ -78,6 +80,7 @@ module.exports = {
       isTaken: false,
       isInHand: false,
       seatNumber: 2,
+      activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
@@ -106,7 +109,8 @@ module.exports = {
       isActive: false,
       isTaken: false,
       isInHand: false,
-      seatNumber: 2,
+      seatNumber: 3,
+      activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
@@ -132,10 +136,11 @@ module.exports = {
       }
     },
     {
-      isActive: false,
+      isActive: true,
       isTaken: false,
       isInHand: false,
       seatNumber: 4,
+      activeSeatIndex: 2,
       player: {
         bankRoll : 100,
         wagerSize: 2,
@@ -165,6 +170,7 @@ module.exports = {
       isTaken: false,
       isInHand: false,
       seatNumber: 5,
+      activeSeatIndex: 5,
       player: {
         bankRoll : 100,
         wagerSize: 2,
@@ -194,6 +200,7 @@ module.exports = {
       isTaken: false,
       isInHand: false,
       seatNumber: 6,
+      activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,

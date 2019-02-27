@@ -1,0 +1,12 @@
+.seat {
+  width: 100%;
+  border: 1px solid grey;
+
+  &:hover, &.active {
+    width: 300%;
+  }
+
+  &.active {
+    border: 1px solid white;
+  }
+}
