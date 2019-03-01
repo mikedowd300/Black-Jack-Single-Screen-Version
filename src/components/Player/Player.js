@@ -5,19 +5,19 @@ const Player = props =>  {
 
   console.log(props);
 
-  const innerElem = div>Bankroll and Wagersize</div>
+  let innerElem = <div className="changeable">Bankroll and Wagersize</div>
   switch(props.stage) {
   case 'INSURANCE':
-    innerElem = <div>Insurance Options</div>
+    innerElem = <div className="changeable">Insurance Options</div>
     break;
   case 'PLACE_YOUR_BETS':
-    innerElem = <div>increase/decrease bet</div>
+    innerElem = <div className="changeable">increase/decrease bet</div>
     break;
   case 'HAND_PLAY':
-    innerElem = <div>Play Youy Hand</div>
+    innerElem = <div className="changeable">Play Youy Hand</div>
     break;
   default:
-    innerElem = <div>Bankroll and Wagersize</div>
+    innerElem = <div className="changeable">Bankroll and Wagersize</div>
 }
 
   return (
@@ -25,7 +25,8 @@ const Player = props =>  {
       <div className="hands-wrapper">HANDS</div>
       { innerElem }
       <div className="avatar-wrapper">
-        <img src={require('./../assets/avatar-images/image-name.png')} />>
+        <img src={require('./../../assets/avatar-images/australia.png')} />
+        <span>Handle</span>
       </div>
     </div>
   );
