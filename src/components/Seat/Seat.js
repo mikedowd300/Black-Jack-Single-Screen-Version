@@ -1,4 +1,5 @@
 import React from 'react';
+import Player from './../Player/Player';
 import './Seat.scss';
 
 const Seat = props =>  {
@@ -27,12 +28,21 @@ const Seat = props =>  {
     updateStage: props.updateStage,
     updateActiveSeatIndex: props.updateActiveSeatIndex,
     updatePlayer
+    //add actions as it becomes obvious they are needed
   }
+
+
+
+  const innerElem = isTaken
+    ? <Player
+        player={player}
+        actions={actions}
+      />
+    : <div>OPEN SEAT</div>
 
   return (
     <div className={`seat ${isActive ? 'active' : ''}`} onClick={updateIsActive}>
-      <div className="player-wrapper">
-      </div>
+      { innerElem }
     </div>
   );
 }

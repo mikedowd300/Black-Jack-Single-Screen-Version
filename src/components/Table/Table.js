@@ -54,6 +54,9 @@ class Table extends Component {
   }
 
   render() {
+
+    console.log(this.state.table);
+    
     const actions = {
       updateActiveSeatIndex: this.updateActiveSeatIndex,
       updateStage: this.updateStage,
