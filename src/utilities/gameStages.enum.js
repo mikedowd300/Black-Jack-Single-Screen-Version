@@ -4,8 +4,8 @@ module.exports = {
   DEAL_FIRST_TWO_CARDS: 'experimental',
   OFFER_INSURANCE: 'offerInsurance',
   PAY_INSURANCE: 'payInsurance',
-  HAND_BY_HAND_PLAY: 'handByHandPlay',
-  PLAY_DEALERS_CARDS: 'playDealersCards',
+  HAND_PLAY: 'handPlay',
+  PLAY_DEALERS_HAND: 'playDealersHand',
   PAYOUT: 'payout',
   COLLECT_CARDS: 'collectCards',
 };
