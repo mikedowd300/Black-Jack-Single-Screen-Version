@@ -47,7 +47,7 @@ module.exports = {
     },
     {
       isActive: false,
-      isTaken: false,
+      isTaken: true,
       isInHand: false,
       seatNumber: 1,
       activeSeatIndex: null,
@@ -107,7 +107,7 @@ module.exports = {
     },
     {
       isActive: false,
-      isTaken: false,
+      isTaken: true,
       isInHand: false,
       seatNumber: 3,
       activeSeatIndex: null,

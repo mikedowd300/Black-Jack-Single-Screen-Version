@@ -1,0 +1,73 @@
+.player {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: pink;
+  overflow: hidden;
+
+  .hands-wrapper {
+    width: 100%;
+    height: 50%;
+  }
+
+  .changeable {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    display: none;
+    background-color: blue;
+  }
+
+  .avatar-wrapper {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    text-align: center;
+    background-color: yellow;
+
+    img {
+      padding-top: 50%;
+      width: 60%;
+      height: 60%;
+      margin: auto;
+      border-radius: 20%;
+    }
+
+    span {
+      position: absolute;
+      width: 50%;
+      text-align: center;
+      top: 75%;
+      left: 25%;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, .8);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, .1);
+        font-weight: bold;
+      }
+    }
+  }
+
+  &:hover {
+
+    .changeable {
+      height: 10%;
+      display: block;
+    }
+
+    .avatar-wrapper {
+      height: 40%;
+
+      img {
+        padding-top: 5%;
+        width: 90%;
+        height: 90%;
+      }
+
+      span {
+        font-size: 24px;
+      }
+    }
+  }
+}
