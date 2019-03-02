@@ -1,6 +1,7 @@
 module.exports = {
   conditions: {},
   activeSeatIndex: null,
+  stage: 'placeYourBets',
   shoe: {},
   dealer: {
     hand: [
