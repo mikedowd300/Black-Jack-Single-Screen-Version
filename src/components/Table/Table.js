@@ -18,6 +18,7 @@ class Table extends Component {
       },
     };
 
+    this.getStage = this.getStage.bind(this);
     this.updateActiveSeatIndex = this.updateActiveSeatIndex.bind(this);
     this.updateStage = this.updateStage.bind(this);
     this.updateDealer = this.updateDealer.bind(this);
@@ -28,8 +29,13 @@ class Table extends Component {
   componentDidMount() {
     //This is where the API call is going to happen - NOPE - ITS GONNA BE IN THE PARENT
     const newTable = TableScenario;
-    const { activeSeatIndex, seats, shoe, dealer } = newTable;
-    this.updateTable({ ...this.state.table, activeSeatIndex, seats, shoe, dealer });
+    const { activeSeatIndex, seats, shoe, dealer, stage } = newTable;
+    this.updateTable({ ...this.state.table, activeSeatIndex, seats, shoe, dealer, stage });
+  }
+
+  // This should live in TableData
+  getStage() {
+    return this.state.table.stage;
   }
 
   updateActiveSeatIndex(activeSeatIndex) {
@@ -60,6 +66,7 @@ class Table extends Component {
       updateActiveSeatIndex: this.updateActiveSeatIndex,
       updateStage: this.updateStage,
       updateSeats: this.updateSeats,
+      getStage: this.getStage,
     }
 
     const { seats, activeSeatIndex, dealer } = this.state.table;

@@ -22,7 +22,6 @@ const Seat = props =>  {
   }
 
   const addPlayer = playerInfo => {
-    console.log(playerInfo);
     updatePlayer({...props.player,
       handle: playerInfo.handle,
       avatarUrl: playerInfo.avatarUrl,
@@ -32,6 +31,7 @@ const Seat = props =>  {
   }
 
   const actions = {
+    getStage: props.actions.getStage, // Will eventually come from TableData
     updateStage: props.updateStage,
     updateActiveSeatIndex: props.updateActiveSeatIndex,
     updatePlayer
