@@ -7,20 +7,12 @@ const Player = props =>  {
   // bankRoll : 100,
   // wagerSize: 2,
   // name: '',
-  // avatarClass: '',
+  // avatarUrl: '',
   // hands:
   // activeHandIndex: 0,
   // insuranceOptionsData:
 
-  const addPlayer = playerInfo => {
-    updatePlayer({...props.player,
-      handel: playerInfo.handel,
-      avatarUrl: playerInfo.avatarUrl,
-      bankRoll: playerInfo.bankRoll,
-      wagerSize: playerInfo.wagerSize,
-      handel: playerInfo.handel,
-    });
-  }
+  const { updatePlayer } = props.actions;
 
   // The only update to the activeHandIndex is to increase it
   // Does this apply even when a new hand is dealt?
@@ -46,10 +38,6 @@ const Player = props =>  {
     updatePlayer({...props.player, hands: props.hands.push(hand) });
   }
 
-  const updatePlayer = player => {
-    props.updateSeat(player);
-  }
-
   let innerElem = <div className="changeable">Bankroll and Wagersize</div>
   switch(props.stage) {
   case gameStages.INSURANCE:
@@ -70,8 +58,11 @@ const Player = props =>  {
       <div className="hands-wrapper">HANDS</div>
       { innerElem }
       <div className="avatar-wrapper">
-        <img src={require('./../../assets/avatar-images/asia.jpg')} />
-        <span>Handle</span>
+
+        <img src={require(`./../../assets/avatar-images/${props.player.avatarUrl}`)} />
+          <span className="outer">
+            <span className="inner">{props.player.handle}</span>
+          </span>
       </div>
     </div>
   );

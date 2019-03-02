@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import gameStages from './../../utilities/gameStages.enum';
 import Seat from './../Seat/Seat';
-import TableScenario from './../../assets/mock-table-scenarios/EmptyTableScenario.js';
+import TableScenario from './../../assets/mock-table-scenarios/EmptyTableScenario';
+import mvpPlayersInfo from './../../assets/mvpPlayersInfo';
 import './Table.scss';
 
 class Table extends Component {
@@ -55,8 +56,6 @@ class Table extends Component {
 
   render() {
 
-    console.log(this.state.table);
-    
     const actions = {
       updateActiveSeatIndex: this.updateActiveSeatIndex,
       updateStage: this.updateStage,
@@ -70,6 +69,7 @@ class Table extends Component {
         seat={seat}
         updateSeats={this.updateSeats}
         actions={actions}
+        mvpPlayersInfo={mvpPlayersInfo}
       />);
 
     return (

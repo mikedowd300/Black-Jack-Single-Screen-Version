@@ -17,15 +17,14 @@ module.exports = {
   seats: [
     {
       isActive: false,
-      isTaken: false,
       isInHand: false,
       seatNumber: 0,
       activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
-        name: '',
-        avatarClass: '',
+        handle: null,
+        avatarUrl: '',
         hands: [
           {
             cards: [],
@@ -47,15 +46,14 @@ module.exports = {
     },
     {
       isActive: false,
-      isTaken: true,
       isInHand: false,
       seatNumber: 1,
       activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
-        name: '',
-        avatarClass: '',
+        handle: null,
+        avatarUrl: '',
         hands: [
           {
             cards: [],
@@ -77,15 +75,14 @@ module.exports = {
     },
     {
       isActive: false,
-      isTaken: false,
       isInHand: false,
       seatNumber: 2,
       activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
-        name: '',
-        avatarClass: '',
+        handle: null,
+        avatarUrl: '',
         hands: [
           {
             cards: [],
@@ -107,15 +104,14 @@ module.exports = {
     },
     {
       isActive: false,
-      isTaken: true,
       isInHand: false,
       seatNumber: 3,
       activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
-        name: '',
-        avatarClass: '',
+        handle: null,
+        avatarUrl: '',
         hands: [
           {
             cards: [],
@@ -136,16 +132,15 @@ module.exports = {
       }
     },
     {
-      isActive: true,
-      isTaken: false,
+      isActive: false,
       isInHand: false,
       seatNumber: 4,
-      activeSeatIndex: 2,
+      activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
-        name: '',
-        avatarClass: '',
+        handle: null,
+        avatarUrl: '',
         hands: [
           {
             cards: [],
@@ -167,15 +162,14 @@ module.exports = {
     },
     {
       isActive: false,
-      isTaken: false,
       isInHand: false,
       seatNumber: 5,
-      activeSeatIndex: 5,
+      activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
-        name: '',
-        avatarClass: '',
+        handle: null,
+        avatarUrl: '',
         hands: [
           {
             cards: [],
@@ -197,15 +191,14 @@ module.exports = {
     },
     {
       isActive: false,
-      isTaken: false,
       isInHand: false,
       seatNumber: 6,
       activeSeatIndex: null,
       player: {
         bankRoll : 100,
         wagerSize: 2,
-        name: '',
-        avatarClass: '',
+        handle: null,
+        avatarUrl: '',
         hands: [
           {
             cards: [],

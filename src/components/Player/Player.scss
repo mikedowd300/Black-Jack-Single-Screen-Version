@@ -2,7 +2,6 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  background-color: pink;
   overflow: hidden;
 
   .hands-wrapper {
@@ -23,7 +22,6 @@
     height: 50%;
     position: relative;
     text-align: center;
-    background-color: yellow;
 
     img {
       padding-top: 50%;
@@ -33,18 +31,23 @@
       border-radius: 20%;
     }
 
-    span {
+    span.outer {
       position: absolute;
-      width: 50%;
+      width: 100%;
       text-align: center;
       top: 75%;
-      left: 25%;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, .8);
+      left: 0;
 
-      &:hover {
-        background-color: rgba(255, 255, 255, .1);
-        font-weight: bold;
+      span.inner {
+        margin: 0 auto;
+        padding: 5px 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, .8);
+
+        &:hover {
+          background-color: rgba(255, 255, 255, .1);
+          font-weight: bold;
+        }
       }
     }
   }
