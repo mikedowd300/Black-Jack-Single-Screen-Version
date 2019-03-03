@@ -5,7 +5,8 @@ import './Seat.scss';
 
 const Seat = props =>  {
   const { isActive, isInHand, player, seatNumber, activeSeatIndex } = props.seat;
-  const { updateSeats } = props.actions;
+  const { updateSeats, getStage } = props.actions;
+  const { seat, mvpPlayersInfo } = props;
 
   const updateSeat = seat => {
     updateSeats(seat)
@@ -13,16 +14,16 @@ const Seat = props =>  {
 
   const updateIsActive = () => {
     if((activeSeatIndex === seatNumber) !== isActive) {
-      updateSeat({...props.seat, isActive: (activeSeatIndex === seatNumber)})
+      updateSeat({...seat, isActive: (activeSeatIndex === seatNumber)})
     }
   }
 
   const updatePlayer = player => {
-    updateSeat({...props.seat, player});
+    updateSeat({...seat, player});
   }
 
   const addPlayer = playerInfo => {
-    updatePlayer({...props.player,
+    updatePlayer({...player,
       handle: playerInfo.handle,
       avatarUrl: playerInfo.avatarUrl,
       bankRoll: playerInfo.bankRoll,
@@ -31,17 +32,15 @@ const Seat = props =>  {
   }
 
   const actions = {
-    getStage: props.actions.getStage, // Will eventually come from TableData
-    updateStage: props.updateStage,
+    getStage, // Will eventually come from TableData
+    updatePlayer,
+    updateStage: props.updateStage, //does this exist?
     updateActiveSeatIndex: props.updateActiveSeatIndex,
-    updatePlayer
     //add UPDATE actions as it becomes obvious they are needed
   }
 
   // This will be a method recieved from the backend
-  const isTaken = () => {
-    return player.handle !== null;
-  }
+  const isTaken = () => player.handle !== null;
 
   const innerElem = isTaken()
     ? <Player
@@ -50,7 +49,7 @@ const Seat = props =>  {
       />
     : <EmptySeat
         addPlayer={addPlayer}
-        mvpPlayersInfo={props.mvpPlayersInfo}
+        mvpPlayersInfo={mvpPlayersInfo}
       />
 
   return (
