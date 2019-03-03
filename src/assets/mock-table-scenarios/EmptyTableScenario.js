@@ -1,7 +1,7 @@
 module.exports = {
   conditions: {},
   activeSeatIndex: null,
-  stage: 'placeYourBets',
+  stage: 'offerInsurance',
   shoe: {},
   dealer: {
     hand: [
@@ -26,21 +26,23 @@ module.exports = {
         wagerSize: 2,
         handle: null,
         avatarUrl: '',
+        isInsured: false,
         hands: [
           {
             cards: [],
             shoe: {},
+            hasBlackJack: () => false,
           }
         ],
         activeHandIndex: 0,
-        insuranceOptionsData: [
+        insuranceOptions: [
           {
-            optionName: 'ACCEPT',
-            optionAcion: () => {},
+            type: 'ACCEPT',
+            action: () => console.log('ACCEPT'),
           },
           {
-            optionName: 'DECLINE',
-            optionAcion: () => {},
+            type: 'DECLINE',
+            action: () => console.log('DECLINE'),
           }
         ],
       }
@@ -55,21 +57,23 @@ module.exports = {
         wagerSize: 2,
         handle: null,
         avatarUrl: '',
+        isInsured: false,
         hands: [
           {
             cards: [],
             shoe: {},
+            hasBlackJack: () => false,
           }
         ],
         activeHandIndex: 0,
-        insuranceOptionsData: [
+        insuranceOptions: [
           {
-            optionName: 'ACCEPT',
-            optionAcion: () => {},
+            type: 'ACCEPT',
+            action: () => console.log('ACCEPT'),
           },
           {
-            optionName: 'DECLINE',
-            optionAcion: () => {},
+            type: 'DECLINE',
+            action: () => console.log('DECLINE'),
           }
         ],
       }
@@ -84,21 +88,23 @@ module.exports = {
         wagerSize: 2,
         handle: null,
         avatarUrl: '',
+        isInsured: false,
         hands: [
           {
             cards: [],
             shoe: {},
+            hasBlackJack: () => false,
           }
         ],
         activeHandIndex: 0,
-        insuranceOptionsData: [
+        insuranceOptions: [
           {
-            optionName: 'ACCEPT',
-            optionAcion: () => {},
+            type: 'ACCEPT',
+            action: () => console.log('ACCEPT'),
           },
           {
-            optionName: 'DECLINE',
-            optionAcion: () => {},
+            type: 'DECLINE',
+            action: () => console.log('DECLINE'),
           }
         ],
       }
@@ -113,21 +119,23 @@ module.exports = {
         wagerSize: 2,
         handle: null,
         avatarUrl: '',
+        isInsured: false,
         hands: [
           {
             cards: [],
             shoe: {},
+            hasBlackJack: () => false,
           }
         ],
         activeHandIndex: 0,
-        insuranceOptionsData: [
+        insuranceOptions: [
           {
-            optionName: 'ACCEPT',
-            optionAcion: () => {},
+            type: 'ACCEPT',
+            action: () => console.log('ACCEPT'),
           },
           {
-            optionName: 'DECLINE',
-            optionAcion: () => {},
+            type: 'DECLINE',
+            action: () => console.log('DECLINE'),
           }
         ],
       }
@@ -138,25 +146,27 @@ module.exports = {
       seatNumber: 4,
       activeSeatIndex: null,
       player: {
-        bankRoll : 100,
+        bankRoll : 50,
         wagerSize: 2,
         handle: null,
         avatarUrl: '',
+        isInsured: false,
         hands: [
           {
             cards: [],
             shoe: {},
+            hasBlackJack: () => true,
           }
         ],
         activeHandIndex: 0,
-        insuranceOptionsData: [
+        insuranceOptions: [
           {
-            optionName: 'ACCEPT',
-            optionAcion: () => {},
+            type: 'ACCEPT',
+            action: () => console.log('ACCEPT'),
           },
           {
-            optionName: 'DECLINE',
-            optionAcion: () => {},
+            type: 'DECLINE',
+            action: () => console.log('DECLINE'),
           }
         ],
       }
@@ -171,21 +181,23 @@ module.exports = {
         wagerSize: 2,
         handle: null,
         avatarUrl: '',
+        isInsured: false,
         hands: [
           {
             cards: [],
             shoe: {},
+            hasBlackJack: () => false,
           }
         ],
         activeHandIndex: 0,
-        insuranceOptionsData: [
+        insuranceOptions: [
           {
-            optionName: 'ACCEPT',
-            optionAcion: () => {},
+            type: 'ACCEPT',
+            action: () => console.log('ACCEPT'),
           },
           {
-            optionName: 'DECLINE',
-            optionAcion: () => {},
+            type: 'DECLINE',
+            action: () => console.log('DECLINE'),
           }
         ],
       }
@@ -200,21 +212,23 @@ module.exports = {
         wagerSize: 2,
         handle: null,
         avatarUrl: '',
+        isInsured: false,
         hands: [
           {
             cards: [],
             shoe: {},
+            hasBlackJack: () => false,
           }
         ],
         activeHandIndex: 0,
-        insuranceOptionsData: [
+        insuranceOptions: [
           {
-            optionName: 'ACCEPT',
-            optionAcion: () => {},
+            type: 'ACCEPT',
+            action: () => console.log('ACCEPT'),
           },
           {
-            optionName: 'DECLINE',
-            optionAcion: () => {},
+            type: 'DECLINE',
+            action: () => console.log('DECLINE'),
           }
         ],
       }
