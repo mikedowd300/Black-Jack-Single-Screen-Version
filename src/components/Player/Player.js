@@ -7,7 +7,7 @@ import './Player.scss';
 
 const Player = props =>  {
 
-  const { player, actions } = props;
+  const { player, actions, conditions } = props;
   const { updatePlayer, getStage } = actions;
 
   // The only update to the activeHandIndex is to increase it
@@ -81,7 +81,13 @@ const Player = props =>  {
       optionsElem = <div className="changeable">Change spaceing</div>
   }
 
-  const handsElems = player.hands.map(hand => <Hand hand={hand} />);
+  const handsElems = player.hands.map((hand,i) => <Hand
+      key={`${player.handel}-hand-${i}`}
+      hand={hand}
+      conditions={conditions}
+      fitHandsClass={player.hands.length > 3 ? 'mini' : 'normal'}
+    />
+  );
 
   return (
     <div className="player">
