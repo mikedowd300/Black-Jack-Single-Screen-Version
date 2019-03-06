@@ -4,9 +4,9 @@ import EmptySeat from './../EmptySeat/EmptySeat';
 import './Seat.scss';
 
 const Seat = props =>  {
-  const { isActive, isInHand, player, seatNumber, activeSeatIndex } = props.seat;
+  const { seat, mvpPlayersInfo, conditions } = props;
+  const { isActive, isInHand, player, seatNumber, activeSeatIndex } = seat;
   const { updateSeats, getStage } = props.actions;
-  const { seat, mvpPlayersInfo } = props;
 
   const updateSeat = seat => {
     updateSeats(seat)
@@ -22,13 +22,8 @@ const Seat = props =>  {
     updateSeat({...seat, player});
   }
 
-  const addPlayer = playerInfo => {
-    updatePlayer({...player,
-      handle: playerInfo.handle,
-      avatarUrl: playerInfo.avatarUrl,
-      bankRoll: playerInfo.bankRoll,
-      wagerSize: playerInfo.wagerSize,
-    });
+  const addPlayer = ({ handle, avatarUrl, bankRoll, wagerSize }) => {
+    updatePlayer({...player, handle, avatarUrl, bankRoll, wagerSize });
   }
 
   const actions = {
@@ -46,6 +41,7 @@ const Seat = props =>  {
     ? <Player
         player={player}
         actions={actions}
+        conditions={conditions}
       />
     : <EmptySeat
         addPlayer={addPlayer}

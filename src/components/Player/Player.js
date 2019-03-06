@@ -1,12 +1,13 @@
 import React from 'react';
 import ManageBetsize from './../ManageBetsize/ManageBetsize';
 import DisplayOptions from './../DisplayOptions/DisplayOptions';
+import Hand from './../Hand/Hand';
 import gameStages from './../../utilities/gameStages.enum';
 import './Player.scss';
 
 const Player = props =>  {
 
-  const { player, actions } = props;
+  const { player, actions, conditions } = props;
   const { updatePlayer, getStage } = actions;
 
   // The only update to the activeHandIndex is to increase it
@@ -41,7 +42,7 @@ const Player = props =>  {
 
   // hasBlackJack will come from tableData
   if( getStage() === gameStages.OFFER_INSURANCE
-      && player.hands[0].hasBlackJack()
+      && player.hands[0].isBlackJack()
       && player.insuranceOptions.length < 3) {
     const evenMoneyOption = {
       type: 'EVEN MONEY',
@@ -50,40 +51,50 @@ const Player = props =>  {
     updateInsuranceOptions(evenMoneyOption);
   }
 
-  let innerElem;
+  let optionsElem;
   switch(getStage()) {
-  case gameStages.OFFER_INSURANCE:
-    innerElem = (
-      <div className="changeable">
-        <DisplayOptions
-          options={player.insuranceOptions}
-          playerHandle={player.handle}
-        />
-      </div>
-    );
-    break;
-  case gameStages.PLACE_YOUR_BETS:
-    innerElem = (
-      <div className="changeable">
-        <ManageBetsize
-          changeBetSize={updateBankRollAndWagerSize}
-          wagerSize={player.wagerSize}
-          bankRoll={player.bankRoll}
-        />
-      </div>
-    );
-    break;
-  case gameStages.HAND_PLAY: // This should not be here - it should be part of the Hand component
-    innerElem = <div className="changeable">Play Youy Hand</div>
-    break;
-  default:
-    innerElem = <div className="changeable">Change spaceing</div>
-}
+    case gameStages.OFFER_INSURANCE:
+      optionsElem = (
+        <div className="changeable">
+          <DisplayOptions
+            options={player.insuranceOptions}
+            playerHandle={player.handle}
+          />
+        </div>
+      );
+      break;
+    case gameStages.PLACE_YOUR_BETS:
+      optionsElem = (
+        <div className="changeable">
+          <ManageBetsize
+            changeBetSize={updateBankRollAndWagerSize}
+            wagerSize={player.wagerSize}
+            bankRoll={player.bankRoll}
+          />
+        </div>
+      );
+      break;
+    case gameStages.HAND_PLAY: // This should not be here - it should be part of the Hand component
+      optionsElem = <div className="changeable">Play Youy Hand</div>
+      break;
+    default:
+      optionsElem = <div className="changeable">Change spaceing</div>
+  }
+
+  const handsElems = player.hands.map((hand,i) => <Hand
+      key={`${player.handel}-hand-${i}`}
+      hand={hand}
+      conditions={conditions}
+      fitHandsClass={player.hands.length > 3 ? 'mini' : 'normal'}
+    />
+  );
 
   return (
     <div className="player">
-      <div className="hands-wrapper">HANDS</div>
-      { innerElem }
+      <div className="hands-wrapper">
+        { handsElems }
+      </div>
+      { optionsElem }
       <div className="avatar-wrapper">
 
         <img src={require(`./../../assets/avatar-images/${player.avatarUrl}`)} />

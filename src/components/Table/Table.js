@@ -3,6 +3,7 @@ import gameStages from './../../utilities/gameStages.enum';
 import Seat from './../Seat/Seat';
 import TableScenario from './../../assets/mock-table-scenarios/EmptyTableScenario';
 import mvpPlayersInfo from './../../assets/mvpPlayersInfo';
+import conditions from './../../assets/conditions/default-conditions';
 import './Table.scss';
 
 class Table extends Component {
@@ -77,6 +78,7 @@ class Table extends Component {
         updateSeats={this.updateSeats}
         actions={actions}
         mvpPlayersInfo={mvpPlayersInfo}
+        conditions={conditions}
       />);
 
     return (

@@ -1,7 +1,7 @@
-module.exports = {
+const EmptyTableScenario = {
   conditions: {},
   activeSeatIndex: null,
-  stage: 'offerInsurance',
+  stage: 'handPlay',
   shoe: {},
   dealer: {
     hand: [
@@ -29,10 +29,227 @@ module.exports = {
         isInsured: false,
         hands: [
           {
-            cards: [],
+            cards: [
+              {
+                code: 'DA',
+                value: 11
+              },
+              {
+                code: 'S6',
+                value: 6
+              },
+              {
+                code: 'D3',
+                value: 3
+              },
+              {
+                code: 'D4',
+                value: 4
+              },
+            ],
             shoe: {},
-            hasBlackJack: () => false,
-          }
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
+          {
+            cards: [
+             {
+               code: 'D8',
+               value: 8
+             },
+             {
+               code: 'ST',
+               value: 10
+             },
+            ],
+            shoe: {},
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
+          {
+            cards: [
+              {
+                code: 'DA',
+                value: 11
+              },
+              {
+                code: 'S6',
+                value: 6
+              },
+              {
+                code: 'D3',
+                value: 3
+              },
+              {
+                code: 'D4',
+                value: 4
+              },
+            ],
+            shoe: {},
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
+          {
+            cards: [
+             {
+               code: 'D8',
+               value: 8
+             },
+             {
+               code: 'ST',
+               value: 10
+             },
+            ],
+            shoe: {},
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
+          {
+            cards: [
+              {
+                code: 'DA',
+                value: 11
+              },
+              {
+                code: 'S6',
+                value: 6
+              },
+              {
+                code: 'D3',
+                value: 3
+              },
+              {
+                code: 'D4',
+                value: 4
+              },
+            ],
+            shoe: {},
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
+          {
+            cards: [
+             {
+               code: 'D8',
+               value: 8
+             },
+             {
+               code: 'ST',
+               value: 10
+             },
+            ],
+            shoe: {},
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
         ],
         activeHandIndex: 0,
         insuranceOptions: [
@@ -60,10 +277,38 @@ module.exports = {
         isInsured: false,
         hands: [
           {
-            cards: [],
+            cards: [
+              {
+                code: 'DA',
+                value: 11
+              },
+              {
+                code: 'S5',
+                value: 5
+              },
+            ],
             shoe: {},
-            hasBlackJack: () => false,
-          }
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
         ],
         activeHandIndex: 0,
         insuranceOptions: [
@@ -91,10 +336,38 @@ module.exports = {
         isInsured: false,
         hands: [
           {
-            cards: [],
+            cards: [
+              {
+                code: 'DA',
+                value: 11
+              },
+              {
+                code: 'S5',
+                value: 5
+              },
+            ],
             shoe: {},
-            hasBlackJack: () => false,
-          }
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
         ],
         activeHandIndex: 0,
         insuranceOptions: [
@@ -122,10 +395,38 @@ module.exports = {
         isInsured: false,
         hands: [
           {
-            cards: [],
+            cards: [
+              {
+                code: 'DA',
+                value: 11
+              },
+              {
+                code: 'S5',
+                value: 5
+              },
+            ],
             shoe: {},
-            hasBlackJack: () => false,
-          }
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
         ],
         activeHandIndex: 0,
         insuranceOptions: [
@@ -153,10 +454,38 @@ module.exports = {
         isInsured: false,
         hands: [
           {
-            cards: [],
+            cards: [
+              {
+                code: 'DA',
+                value: 11
+              },
+              {
+                code: 'S5',
+                value: 5
+              },
+            ],
             shoe: {},
-            hasBlackJack: () => true,
-          }
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
         ],
         activeHandIndex: 0,
         insuranceOptions: [
@@ -184,10 +513,38 @@ module.exports = {
         isInsured: false,
         hands: [
           {
-            cards: [],
+            cards: [
+              {
+                code: 'DA',
+                value: 11
+              },
+              {
+                code: 'S5',
+                value: 5
+              },
+            ],
             shoe: {},
-            hasBlackJack: () => false,
-          }
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
         ],
         activeHandIndex: 0,
         insuranceOptions: [
@@ -215,10 +572,38 @@ module.exports = {
         isInsured: false,
         hands: [
           {
-            cards: [],
+            cards: [
+              {
+                code: 'DA',
+                value: 11
+              },
+              {
+                code: 'S5',
+                value: 5
+              },
+            ],
             shoe: {},
-            hasBlackJack: () => false,
-          }
+            hasBeenPaid: false,
+            handBetSize: 2,
+            handPlayActions: [
+              {
+                type: 'STAY',
+                action: () => console.log("STAY"),
+              },
+            ],
+            isBlackJack: () => false,
+            updateHandBet: () => {},
+            getDoubleBetAmount: () => 2,
+            getSplitBetAmount: () => 2,
+            isBusted: () => false,
+            isHittable: () => true,
+            isSplittable: () => true,
+            isDoubleable: () => true,
+            isBlackJack: () => false,
+            is21: () => false,
+            getAceCount: () => 0,
+            getHandValue: () => 17,
+          },
         ],
         activeHandIndex: 0,
         insuranceOptions: [
@@ -235,3 +620,5 @@ module.exports = {
     },
   ]
 };
+
+export default EmptyTableScenario;
