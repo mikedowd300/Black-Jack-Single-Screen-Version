@@ -50,6 +50,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 0,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -83,6 +84,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 1,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -124,6 +126,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 2,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -157,6 +160,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 3,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -168,9 +172,9 @@ const EmptyTableScenario = {
             getDoubleBetAmount: () => 2,
             getSplitBetAmount: () => 2,
             isBusted: () => false,
-            isHittable: () => true,
+            isHittable: () => false,
             isSplittable: () => true,
-            isDoubleable: () => true,
+            isDoubleable: () => false,
             isBlackJack: () => false,
             is21: () => false,
             getAceCount: () => 0,
@@ -198,39 +202,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
-            handPlayActions: [
-              {
-                type: 'STAY',
-                action: () => console.log("STAY"),
-              },
-            ],
-            isBlackJack: () => false,
-            updateHandBet: () => {},
-            getDoubleBetAmount: () => 2,
-            getSplitBetAmount: () => 2,
-            isBusted: () => false,
-            isHittable: () => true,
-            isSplittable: () => true,
-            isDoubleable: () => true,
-            isBlackJack: () => false,
-            is21: () => false,
-            getAceCount: () => 0,
-            getHandValue: () => 17,
-          },
-          {
-            cards: [
-             {
-               code: 'D8',
-               value: 8
-             },
-             {
-               code: 'ST',
-               value: 10
-             },
-            ],
-            shoe: {},
-            hasBeenPaid: false,
-            handBetSize: 2,
+            index: 4,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -251,7 +223,7 @@ const EmptyTableScenario = {
             getHandValue: () => 17,
           },
         ],
-        activeHandIndex: 0,
+        activeHandIndex: 3,
         insuranceOptions: [
           {
             type: 'ACCEPT',
@@ -290,6 +262,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 0,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -349,6 +322,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 0,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -408,6 +382,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 0,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -467,6 +442,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 0,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -526,6 +502,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 0,
             handPlayActions: [
               {
                 type: 'STAY',
@@ -585,6 +562,7 @@ const EmptyTableScenario = {
             shoe: {},
             hasBeenPaid: false,
             handBetSize: 2,
+            index: 0,
             handPlayActions: [
               {
                 type: 'STAY',
