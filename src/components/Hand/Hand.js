@@ -9,10 +9,11 @@ const Hand = props =>  {
     conditions,
     fitHandsClass,
     getStage,
-    updateHand } = props;
+    updateHand,
+    updateBankRoll } = props;
 
   const { cards,
-    betSize,
+    handBetSize,
     index,
     handPlayActions,
     is21,
@@ -48,11 +49,11 @@ const Hand = props =>  {
     }
   }
 
-  updateCards = card => {
+  const updateCards = card => {
     updateHand({...hand, cards: [...cards, card]})
   }
 
-  updateHandBetSize = amt => {
+  const updateHandBetSize = amt => {
     updateHand({...hand, handBetSize: handBetSize + amt})
     updateBankRoll(amt);
   }
