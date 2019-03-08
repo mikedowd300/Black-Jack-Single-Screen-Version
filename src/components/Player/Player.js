@@ -35,7 +35,6 @@ const Player = props =>  {
   }
 
   const updateHandOfHands = hand => {
-    console.log('update hand in updateHandOfHands');
     const hands = [...player.hands];
     hands[hand.index] = hand;
     updatePlayer({...player, hands });
@@ -102,6 +101,7 @@ const Player = props =>  {
       conditions={conditions}
       fitHandsClass={player.hands.length > 3 ? 'mini' : 'normal'}
       updateHand={updateHandOfHands}
+      updateBankRoll={updateBankRoll}
     />
   );
 

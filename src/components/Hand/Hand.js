@@ -12,6 +12,7 @@ const Hand = props =>  {
     updateHand } = props;
 
   const { cards,
+    betSize,
     index,
     handPlayActions,
     is21,
@@ -45,6 +46,15 @@ const Hand = props =>  {
     if(hasNewOption) {
       updateHand({...hand, handPlayActions: options});
     }
+  }
+
+  updateCards = card => {
+    updateHand({...hand, cards: [...cards, card]})
+  }
+
+  updateHandBetSize = amt => {
+    updateHand({...hand, handBetSize: handBetSize + amt})
+    updateBankRoll(amt);
   }
 
   getOptions();
