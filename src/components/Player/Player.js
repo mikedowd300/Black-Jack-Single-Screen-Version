@@ -30,8 +30,15 @@ const Player = props =>  {
     updatePlayer({...player, insuranceOptions: [...player.insuranceOptions, option]});
   }
 
-  const updateHands = hand => {
+  const addHand = hand => {
     updatePlayer({...player, hands: [...player.hands, hand] });
+  }
+
+  const updateHandOfHands = hand => {
+    console.log('update hand in updateHandOfHands');
+    const hands = [...player.hands];
+    hands[hand.index] = hand;
+    updatePlayer({...player, hands });
   }
 
   const updateIsInsured = val => {
@@ -74,18 +81,27 @@ const Player = props =>  {
         </div>
       );
       break;
-    case gameStages.HAND_PLAY: // This should not be here - it should be part of the Hand component
-      optionsElem = <div className="changeable">Play Youy Hand</div>
+    case gameStages.HAND_PLAY:
+      optionsElem = (
+        <div className="changeable">
+          <DisplayOptions
+            options={player.hands[player.activeHandIndex].handPlayActions}
+            playerHandle={player.handle}
+          />
+        </div>
+      );
       break;
     default:
-      optionsElem = <div className="changeable">Change spaceing</div>
+      optionsElem = <div className="changeable">THIS SHOULDNT HAPPEN</div>
   }
 
   const handsElems = player.hands.map((hand,i) => <Hand
       key={`${player.handel}-hand-${i}`}
+      getStage={getStage}
       hand={hand}
       conditions={conditions}
       fitHandsClass={player.hands.length > 3 ? 'mini' : 'normal'}
+      updateHand={updateHandOfHands}
     />
   );
 

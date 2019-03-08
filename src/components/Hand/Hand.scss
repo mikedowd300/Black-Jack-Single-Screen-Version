@@ -1,28 +1,31 @@
-.cards-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.hand-wrapper {
 
-  &.mini {
-    .card-image {
-      width: 25px;
-      height: 37.5px;
-      margin: 3px 0 0 0;
-    }
-  }
-
-  &:hover {
-    .card-image {
-      width: 75px;
-      height: 112px;
-    }
+  .cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
     &.mini {
       .card-image {
-        width: 37px;
-        height: 56px;
+        width: 25px;
+        height: 37.5px;
         margin: 3px 0 0 0;
+      }
+    }
+
+    &:hover {
+      .card-image {
+        width: 75px;
+        height: 112px;
+      }
+
+      &.mini {
+        .card-image {
+          width: 37px;
+          height: 56px;
+          margin: 3px 0 0 0;
+        }
       }
     }
   }
