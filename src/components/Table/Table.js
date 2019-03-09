@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import gameStages from './../../utilities/gameStages.enum';
+import DealerHand from './../DealerHand/DealerHand';
 import Seat from './../Seat/Seat';
 import TableScenario from './../../assets/mock-table-scenarios/EmptyTableScenario';
 import mvpPlayersInfo from './../../assets/mvpPlayersInfo';
@@ -14,7 +15,7 @@ class Table extends Component {
         activeSeatIndex: null,
         seats: [],
         shoe: {},
-        dealer: {},
+        dealerHand: {},
         stage: '',
       },
     };
@@ -22,16 +23,16 @@ class Table extends Component {
     this.getStage = this.getStage.bind(this);
     this.updateActiveSeatIndex = this.updateActiveSeatIndex.bind(this);
     this.updateStage = this.updateStage.bind(this);
-    this.updateDealer = this.updateDealer.bind(this);
+    this.updateDealerHand = this.updateDealerHand.bind(this);
     this.updateSeats = this.updateSeats.bind(this);
     this.updateTable = this.updateTable.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     //This is where the API call is going to happen - NOPE - ITS GONNA BE IN THE PARENT
     const newTable = TableScenario;
-    const { activeSeatIndex, seats, shoe, dealer, stage } = newTable;
-    this.updateTable({ ...this.state.table, activeSeatIndex, seats, shoe, dealer, stage });
+    const { activeSeatIndex, seats, shoe, dealerHand, stage } = newTable;
+    this.updateTable({ ...this.state.table, activeSeatIndex, seats, shoe, dealerHand, stage });
   }
 
   // This should live in TableData
@@ -47,8 +48,8 @@ class Table extends Component {
     this.updateTable({ ...this.state.table, stage })
   }
 
-  updateDealer(dealer) {
-    this.updateTable({ ...this.state.table, dealer })
+  updateDealerHand(dealerHand) {
+    this.updateTable({ ...this.state.table, dealerHand })
   }
 
   updateSeats(seat) {
@@ -70,7 +71,7 @@ class Table extends Component {
       getStage: this.getStage,
     }
 
-    const { seats, activeSeatIndex, dealer } = this.state.table;
+    const { seats, activeSeatIndex, dealerHand } = this.state.table;
 
     const seatElems = seats.map((seat, i) => <Seat
         key={`seat-${i}`}
@@ -83,12 +84,19 @@ class Table extends Component {
 
     return (
       <div className="table">
-        <div className="dealer-wrapper"></div>
+        <div className="dealer-hand-wrapper">
+          <DealerHand
+            dealerHand={ dealerHand }
+            updateDealerHand={this.updateDealerHand}
+            getStage={this.getStage}
+          />
+        </div>
         <div className="seats-wrapper">
-          {seatElems}
+          { seatElems }
         </div>
       </div>
     );
+
   }
 }
 

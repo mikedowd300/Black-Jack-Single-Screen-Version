@@ -1,0 +1,35 @@
+.dealer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4px;
+    width: 100%;
+    height: 100%;
+
+    .card-image.dealer-card {
+      width: 150px;
+      height: 209px;
+      margin: -40px;
+    }
+  }
+
+  span {
+    &.false {
+      display: none;
+    }
+
+    &.show {
+      display: inline;
+    }
+  }
+}
