@@ -1,17 +1,27 @@
 const EmptyTableScenario = {
   conditions: {},
   activeSeatIndex: null,
-  stage: 'handPlay',
+  stage: 'payout',
   shoe: {},
-  dealer: {
-    hand: [
+  dealerHand: {
+    isBlackJack: () => false,
+    isBusted: () => false,
+    mustHit: () => true,
+    is21: () => false,
+    getAceCount: () => 0,
+    getHandValue: () => 17,
+    hasAceUp: () => false,
+    isComplete: () => false,
+    cards: [
      {
        code: 'H4',
-       value: 4
+       value: 4,
+       isHoleCard: false,
      },
      {
        code: 'DA',
-       value: 11
+       value: 11,
+       isHoleCard: true,
      }
    ]
   },
