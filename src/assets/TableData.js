@@ -1,6 +1,6 @@
-const EmptyTableScenario = {
+const TableData = {
   conditions: {},
-  activeSeatIndex: null,
+  activeSeatIndex: 0,
   stage: 'payout',
   shoe: {},
   dealerHand: {
@@ -609,4 +609,4 @@ const EmptyTableScenario = {
   ]
 };
 
-export default EmptyTableScenario;
+export default TableData;

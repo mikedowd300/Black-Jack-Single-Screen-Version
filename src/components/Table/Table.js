@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import gameStages from './../../utilities/gameStages.enum';
 import DealerHand from './../DealerHand/DealerHand';
 import Seat from './../Seat/Seat';
-import TableScenario from './../../assets/mock-table-scenarios/EmptyTableScenario';
 import mvpPlayersInfo from './../../assets/mvpPlayersInfo';
 import conditions from './../../assets/conditions/default-conditions';
 import './Table.scss';
@@ -29,9 +28,7 @@ class Table extends Component {
   }
 
   componentWillMount() {
-    //This is where the API call is going to happen - NOPE - ITS GONNA BE IN THE PARENT
-    const newTable = TableScenario;
-    const { activeSeatIndex, seats, shoe, dealerHand, stage } = newTable;
+    const { activeSeatIndex, seats, shoe, dealerHand, stage } = this.props.table;
     this.updateTable({ ...this.state.table, activeSeatIndex, seats, shoe, dealerHand, stage });
   }
 
@@ -82,6 +79,7 @@ class Table extends Component {
         conditions={conditions}
       />);
 
+    console.log(this.state.table);
     return (
       <div className="table">
         <div className="dealer-hand-wrapper">

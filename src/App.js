@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Table from './components/Table/Table';
+import TableData from './assets/TableData'
 import './App.scss';
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <div className="game">
-        <Table />
+        <Table table={ TableData }/>
       </div>
     );
-  }
 }
 
 export default App;
